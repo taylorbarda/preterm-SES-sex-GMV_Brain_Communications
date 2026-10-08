@@ -4,7 +4,8 @@ Paths and switches shared by every notebook.
 Choose the data with the BC_DATA_MODE environment variable:
 
     synthetic  (default)  fake data in ./synthetic_data, made by make_synthetic_data.py
-    real                  the original data in ../mod_analysis_final_bc/data (read only)
+    real                  the real data (read only): ../mod_analysis_final_bc/data, or the folder
+                          set in BC_REAL_DATA_DIR. Not public; available only to authorized users.
 
 All outputs go to ./outputs/<mode>/. Nothing is ever written to the original folder.
 """
@@ -14,7 +15,8 @@ from pathlib import Path
 
 PROJECT_DIR = Path(__file__).resolve().parent
 ORIGINAL_DIR = PROJECT_DIR.parent / "mod_analysis_final_bc"
-ORIGINAL_DATA_DIR = ORIGINAL_DIR / "data"
+# Real input data: the original analysis folder, or any folder given by BC_REAL_DATA_DIR
+ORIGINAL_DATA_DIR = Path(os.environ.get("BC_REAL_DATA_DIR", ORIGINAL_DIR / "data"))
 
 DATA_MODE = os.environ.get("BC_DATA_MODE", "synthetic").strip().lower()
 

@@ -5,8 +5,9 @@ Analysis code for:
 > **Infant socioeconomic status moderates preterm birth effects on adult gray matter in females only**
 > Barda T, Thalhammer M, Schmitz-Koep B, Menegaux A, Bartmann P, Wolke D, Sorg C, Hedderich DM. *Brain Communications*. Code released upon acceptance.
 
-This folder is a cleaned-up [marimo](https://marimo.io) version of the Jupyter notebooks in
-`../mod_analysis_final_bc/`. **The original folder is never modified.** In real-data mode it is only read.
+The analysis is written as [marimo](https://marimo.io) notebooks. The participant data are
+confidential and are **not** included. The repository contains synthetic (fake) data with the
+same structure, so anyone can run the full pipeline and check that the code works.
 
 ---
 
@@ -30,15 +31,16 @@ Open a notebook interactively (live editing, tabs, dropdowns):
 .venv/bin/marimo edit 05_moderation_process.py
 ```
 
-Run on the **real data**. This reads `../mod_analysis_final_bc/data/` and writes only to `outputs/real/`:
+### Real data (authorized users only)
+
+The participant data are not public. Researchers granted data access by the corresponding
+author can place the four input files (same names as in `synthetic_data/`) in a local folder and run:
 
 ```bash
-./run_all.sh real
-BC_DATA_MODE=real .venv/bin/marimo edit 07_compare_with_original.py
+BC_REAL_DATA_DIR=/path/to/data ./run_all.sh real
 ```
 
-Notebook 07 checks every new table and PROCESS output against the files the original
-notebooks produced, and shows each new figure next to the original one.
+Real-data results are written to `outputs/real/`, which is excluded from version control.
 
 ---
 
@@ -54,7 +56,8 @@ Optional environment variables:
 
 | Variable | Default | Meaning |
 |---|---|---|
-| `BC_DATA_MODE` | `synthetic` | `synthetic` or `real` |
+| `BC_DATA_MODE` | `synthetic` | `synthetic` or `real` (real requires data access) |
+| `BC_REAL_DATA_DIR` | — | folder with the real input files (authorized users only) |
 | `BC_PROCESS_R` | — | path to `process.R` |
 | `BC_PROCESS_BOOT` | `5000` | PROCESS bootstrap samples |
 
@@ -72,10 +75,10 @@ Run the notebooks in order. Each one saves the file the next one needs.
 | `04_group_differences.py` | TIV residualization, histograms/Q–Q plots, birth-group ANCOVAs (Fig. 1, eTable 1), DK lobe ANCOVAs + FDR (eFigure 3, eTable 2) | `B2_creating_residuals_bc.ipynb` | `NeuroCombat_resid_global_and_lobes_correct.csv`, `analysis/global_and_roi_gmv_wmv/` |
 | `05_moderation_process.py` | 42 PROCESS models (model 3 whole group, model 1 by sex; birth group and GA; global + lobe outcomes): eTables 3–7 | `B3_moderation_analysis_bc.ipynb` | `analysis/moderation/*.txt` |
 | `06_publication_figures.py` | Figs. 1–3, eFigures 4–7, FSIQ OLS models (eTable 8) | `C1_visualization_bc.ipynb` | `analysis/graphs_publication/`, `analysis/fsiq_gmv_ols_*.txt` |
-| `07_compare_with_original.py` | Real mode only: compares all outputs with the original results | — | (on screen) |
+| `07_compare_with_original.py` | Internal check (authors only): compares real-data outputs with the results of the original analysis notebooks; needs the original data | — | (on screen) |
 
-Output file names and sub-folders are the same as in `../mod_analysis_final_bc/data/`, so
-`outputs/real/<path>` can be compared directly with `../mod_analysis_final_bc/data/<path>`.
+Output file names and sub-folders match those of the original analysis, which is what
+notebook 07 uses to verify that the code reproduces the published results.
 
 ### Folder layout
 
@@ -91,7 +94,7 @@ marimo_mod_analysis_final_bc/
 ├── synthetic_data/          fake inputs (same file names/formats as the real data)
 └── outputs/
     ├── synthetic/           results from fake data (+ site/)
-    └── real/                results from real data (+ site/)
+    └── real/                results from real data (local only, never committed)
 ```
 
 ---
@@ -139,8 +142,8 @@ The results from synthetic data are meaningless. They only show that the code ru
    was replaced by TIFF data. Now a real `.png` and a `.tiff` are saved.
 3. **B3 exploratory interaction plots**: the SES legend overlapped the "Male"/"Female" panel
    titles. The legend is now placed above them.
-4. **B3 PROCESS path** pointed to `…/Documents/Documents_Taylor_Laptop/sw/…`, which doesn't exist
-   any more. It is now in `config.py` and can be changed with `BC_PROCESS_R`.
+4. **B3 PROCESS path** was hard-coded to a folder that no longer exists. It is now set with
+   `BC_PROCESS_R`.
 
 ### Added (from the manuscript cross-check)
 

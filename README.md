@@ -15,7 +15,7 @@ This folder is a cleaned-up [marimo](https://marimo.io) version of the Jupyter n
 ```bash
 cd marimo_mod_analysis_final_bc
 
-# one-time setup (already done on Taylor's laptop)
+# one-time setup
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
 
@@ -48,14 +48,14 @@ notebooks produced, and shows each new figure next to the original one.
 |---|---|
 | Python | 3.12 (package versions pinned in `requirements.txt`, same as the original `.venv`) |
 | R | ≥ 4.x with `Rscript` on the PATH |
-| PROCESS v4.3 for R (Hayes) | `process.R`, default location `~/Documents/Documents - Taylor’s Laptop/Documents_Taylor_Laptop/sw/processv43/PROCESS v4.3 for R/process.R`. Set `BC_PROCESS_R=/path/to/process.R` to use another location. |
+| PROCESS v4.3 for R (Hayes) | Download `process.R` from [processmacro.org](https://www.processmacro.org) and set `BC_PROCESS_R=/path/to/process.R`. |
 
 Optional environment variables:
 
 | Variable | Default | Meaning |
 |---|---|---|
 | `BC_DATA_MODE` | `synthetic` | `synthetic` or `real` |
-| `BC_PROCESS_R` | see above | path to `process.R` |
+| `BC_PROCESS_R` | — | path to `process.R` |
 | `BC_PROCESS_BOOT` | `5000` | PROCESS bootstrap samples |
 
 ---

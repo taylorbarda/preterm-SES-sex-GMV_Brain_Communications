@@ -3,7 +3,7 @@
 Analysis code for:
 
 > **Infant socioeconomic status moderates preterm birth effects on adult gray matter in females only**
-> Barda T, Thalhammer M, Schmitz-Koep B, Menegaux A, Bartmann P, Wolke D, Sorg C, Hedderich DM. *Brain Communications* (under revision).
+> Barda T, Thalhammer M, Schmitz-Koep B, Menegaux A, Bartmann P, Wolke D, Sorg C, Hedderich DM. *Brain Communications*. Code released upon acceptance.
 
 This folder is a cleaned-up [marimo](https://marimo.io) version of the Jupyter notebooks in
 `../mod_analysis_final_bc/`. **The original folder is never modified.** In real-data mode it is only read.

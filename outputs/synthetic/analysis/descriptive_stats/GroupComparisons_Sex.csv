@@ -1,0 +1,2 @@
+Comparison,Variable,Test,chi2,df,p,VPVLBW_male_n,VPVLBW_female_n,Fullterm_male_n,Fullterm_female_n
+Sex distribution by birth group,sex,Chi-square test,1.9639625803078173,1,0.16109016092447798,56,43,73,36

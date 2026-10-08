@@ -1,0 +1,37 @@
+# ---------------------------------------------------------------
+# PRIVACY: real participant data and anything computed from it
+# must never be committed.
+# ---------------------------------------------------------------
+outputs/real/
+data/
+**/data/
+*.xlsx
+*.xls
+*.sav
+*.nii
+*.nii.gz
+*.mgz
+# marimo session caches store cell outputs (incl. real-data runs)
+__marimo__/
+# PROCESS input copies of the analysis data
+**/_process_input/
+# private notes containing real results
+PRIVATE_NOTES.md
+
+# ---------------------------------------------------------------
+# Too large for GitHub (PNG versions are committed instead)
+# ---------------------------------------------------------------
+*.tiff
+*.tif
+
+# ---------------------------------------------------------------
+# Environment / system
+# ---------------------------------------------------------------
+.venv/
+__pycache__/
+.claude/
+.DS_Store
+
+# fake data is safe to publish
+!synthetic_data/
+!synthetic_data/*.xlsx

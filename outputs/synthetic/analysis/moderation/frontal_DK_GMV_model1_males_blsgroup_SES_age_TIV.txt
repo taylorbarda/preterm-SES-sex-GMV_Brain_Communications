@@ -1,0 +1,59 @@
+
+********************* PROCESS for R Version 4.3.1 ********************* 
+ 
+           Written by Andrew F. Hayes, Ph.D.  www.afhayes.com              
+   Documentation available in Hayes (2022). www.guilford.com/p/hayes3   
+ 
+*********************************************************************** 
+                      
+Model : 1             
+    Y : frontal_DK_GMV
+    X : blsgroup      
+    W : ses0y2        
+
+Covariates: 
+       Age_at_scan2_z TIV_ml_z
+
+Sample size: 129
+
+Custom seed: 1234
+
+
+*********************************************************************** 
+Outcome Variable: frontal_DK_GMV
+
+Model Summary: 
+          R      R-sq           MSE         F       df1       df2         p
+     0.9236    0.8531 35753627.3316  142.8474    5.0000  123.0000    0.0000
+
+Model: 
+                     coeff        se         t         p        LLCI        ULCI
+constant       185295.1567 4543.8833   40.7790    0.0000 176300.8068 194289.5067
+blsgroup        -1261.6661 2875.8442   -0.4387    0.6616  -6954.2307   4430.8985
+ses0y2          -3225.6745 2125.5406   -1.5176    0.1317  -7433.0572    981.7082
+Int_1            1494.9164 1352.0008    1.1057    0.2710  -1181.2897   4171.1225
+Age_at_scan2_z    520.0348  518.3056    1.0033    0.3177   -505.9206   1545.9903
+TIV_ml_z        16651.3930  706.9426   23.5541    0.0000  15252.0417  18050.7443
+
+Product terms key:
+Int_1  :  blsgroup  x  ses0y2      
+
+Test(s) of highest order unconditional interaction(s):
+      R2-chng         F       df1       df2         p
+X*W    0.0015    1.2226    1.0000  123.0000    0.2710
+----------
+Focal predictor: blsgroup (X)
+      Moderator: ses0y2 (W)
+
+Data for visualizing the conditional effect of the focal predictor:
+   blsgroup    ses0y2 frontal_DK_GMV
+     1.0000    1.0000    189583.7515
+     2.0000    1.0000    189817.0018
+     1.0000    2.0000    187852.9934
+     2.0000    2.0000    189581.1601
+     1.0000    3.0000    186122.2352
+     2.0000    3.0000    189345.3184
+
+******************** ANALYSIS NOTES AND ERRORS ************************ 
+
+Level of confidence for all confidence intervals in output: 95

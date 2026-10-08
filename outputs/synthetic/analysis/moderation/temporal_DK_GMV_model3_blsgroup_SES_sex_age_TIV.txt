@@ -1,0 +1,74 @@
+
+********************* PROCESS for R Version 4.3.1 ********************* 
+ 
+           Written by Andrew F. Hayes, Ph.D.  www.afhayes.com              
+   Documentation available in Hayes (2022). www.guilford.com/p/hayes3   
+ 
+*********************************************************************** 
+                       
+Model : 3              
+    Y : temporal_DK_GMV
+    X : blsgroup       
+    W : ses0y2         
+    Z : sex            
+
+Covariates: 
+       Age_at_scan2_z TIV_ml_z
+
+Sample size: 208
+
+Custom seed: 1234
+
+
+*********************************************************************** 
+Outcome Variable: temporal_DK_GMV
+
+Model Summary: 
+          R      R-sq           MSE         F       df1       df2         p
+     0.9255    0.8566 18348184.1950  131.4515    9.0000  198.0000    0.0000
+
+Model: 
+                     coeff        se         t         p        LLCI        ULCI
+constant       110501.8163 7874.5555   14.0328    0.0000  94973.0475 126030.5850
+blsgroup          -67.8854 5066.9885   -0.0134    0.9893 -10060.0802   9924.3094
+ses0y2           -474.9292 3634.5011   -0.1307    0.8962  -7642.2324   6692.3741
+Int_1             536.5988 2364.6878    0.2269    0.8207  -4126.6091   5199.8066
+sex              1042.6015 5523.5312    0.1888    0.8505  -9849.9041  11935.1070
+Int_2            -115.0244 3600.6853   -0.0319    0.9745  -7215.6423   6985.5935
+Int_3            -538.5657 2538.6639   -0.2121    0.8322  -5544.8578   4467.7265
+Int_4             115.2317 1685.9843    0.0683    0.9456  -3209.5605   3440.0239
+Age_at_scan2_z    551.2494  307.1074    1.7950    0.0742    -54.3720   1156.8709
+TIV_ml_z         9922.1565  393.8416   25.1933    0.0000   9145.4936  10698.8195
+
+Product terms key:
+Int_1  :  blsgroup  x  ses0y2      
+Int_2  :  blsgroup  x  sex      
+Int_3  :  ses0y2  x  sex      
+Int_4  :  blsgroup  x  ses0y2  x  sex
+
+Test(s) of highest order unconditional interaction(s):
+        R2-chng         F       df1       df2         p
+X*W*Z    0.0000    0.0047    1.0000  198.0000    0.9456
+----------
+Focal predictor: blsgroup (X)
+      Moderator: ses0y2 (W)
+      Moderator: sex (Z)
+
+Data for visualizing the conditional effect of the focal predictor:
+   blsgroup    ses0y2       sex temporal_DK_GMV
+     1.0000    1.0000    1.0000     110999.8435
+     2.0000    1.0000    1.0000     111468.7641
+     1.0000    1.0000    2.0000     111504.0866
+     2.0000    1.0000    2.0000     111973.2145
+     1.0000    2.0000    1.0000     110638.1791
+     2.0000    2.0000    1.0000     111758.9302
+     1.0000    2.0000    2.0000     110719.0882
+     2.0000    2.0000    2.0000     111955.2783
+     1.0000    3.0000    1.0000     110276.5147
+     2.0000    3.0000    1.0000     112049.0963
+     1.0000    3.0000    2.0000     109934.0898
+     2.0000    3.0000    2.0000     111937.3420
+
+******************** ANALYSIS NOTES AND ERRORS ************************ 
+
+Level of confidence for all confidence intervals in output: 95

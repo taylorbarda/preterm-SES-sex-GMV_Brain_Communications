@@ -1,0 +1,5 @@
+Lobe,Variable,term,coeff,se,t,p,LLCI,sig_p05,source_file,status
+Frontal,frontal_DK_GMV,Int_4,-1475.0462,2266.6298,-0.6508,0.516,-5944.8821,False,frontal_DK_GMV_model3_blsgroup_SES_sex_age_TIV.txt,ok
+Occipital,occipital_DK_GMV,Int_4,297.7689,863.3415,0.3449,0.7305,-1404.7564,False,occipital_DK_GMV_model3_blsgroup_SES_sex_age_TIV.txt,ok
+Parietal,parietal_DK_GMV,Int_4,355.8611,1571.5562,0.2264,0.8211,-2743.2767,False,parietal_DK_GMV_model3_blsgroup_SES_sex_age_TIV.txt,ok
+Temporal,temporal_DK_GMV,Int_4,115.2317,1685.9843,0.0683,0.9456,-3209.5605,False,temporal_DK_GMV_model3_blsgroup_SES_sex_age_TIV.txt,ok

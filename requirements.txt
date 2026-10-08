@@ -1,0 +1,11 @@
+# Same package versions as the original notebooks' .venv, plus marimo
+marimo==0.25.1
+pandas==3.0.3
+numpy==2.4.6
+statsmodels==0.14.6
+scipy==1.17.1
+seaborn==0.13.2
+matplotlib==3.10.9
+neuroCombat==0.2.12
+pingouin==0.6.1
+openpyxl==3.1.5

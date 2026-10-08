@@ -1,0 +1,73 @@
+
+********************* PROCESS for R Version 4.3.1 ********************* 
+ 
+           Written by Andrew F. Hayes, Ph.D.  www.afhayes.com              
+   Documentation available in Hayes (2022). www.guilford.com/p/hayes3   
+ 
+*********************************************************************** 
+                     
+Model : 3            
+    Y : GMV_resid_har
+    X : blsgroup     
+    W : ses0y2       
+    Z : sex          
+
+Covariates: 
+       Age_at_scan2_z
+
+Sample size: 208
+
+Custom seed: 1234
+
+
+*********************************************************************** 
+Outcome Variable: GMV_resid_har
+
+Model Summary: 
+          R      R-sq            MSE         F       df1       df2         p
+     0.2449    0.0600 355948987.7928    1.5866    8.0000  199.0000    0.1307
+
+Model: 
+                    coeff         se         t         p        LLCI       ULCI
+constant       -1453.2885 34667.6414   -0.0419    0.9666 -69816.4043 66909.8273
+blsgroup       -1672.2180 22282.5307   -0.0750    0.9403 -45612.4217 42267.9858
+ses0y2         -7721.2279 16007.8618   -0.4823    0.6301 -39288.0512 23845.5954
+Int_1           5859.5068 10415.0235    0.5626    0.5743 -14678.4770 26397.4905
+sex            -1053.1853 24324.1760   -0.0433    0.9655 -49019.4268 46913.0561
+Int_2           4484.3968 15822.4112    0.2834    0.7771 -26716.7258 35685.5194
+Int_3           2914.7924 11162.3604    0.2611    0.7943 -19096.9079 24926.4928
+Int_4          -3442.4385  7407.5782   -0.4647    0.6426 -18049.8679 11164.9909
+Age_at_scan2_z  2590.4786  1350.6955    1.9179    0.0566    -73.0356  5253.9928
+
+Product terms key:
+Int_1  :  blsgroup  x  ses0y2      
+Int_2  :  blsgroup  x  sex      
+Int_3  :  ses0y2  x  sex      
+Int_4  :  blsgroup  x  ses0y2  x  sex
+
+Test(s) of highest order unconditional interaction(s):
+        R2-chng         F       df1       df2         p
+X*W*Z    0.0010    0.2160    1.0000  199.0000    0.6426
+----------
+Focal predictor: blsgroup (X)
+      Moderator: ses0y2 (W)
+      Moderator: sex (Z)
+
+Data for visualizing the conditional effect of the focal predictor:
+   blsgroup    ses0y2       sex GMV_resid_har
+     1.0000    1.0000    1.0000    -2083.6621
+     2.0000    1.0000    1.0000     3145.5850
+     1.0000    1.0000    2.0000      819.9033
+     2.0000    1.0000    2.0000     7091.1088
+     1.0000    2.0000    1.0000    -4473.0293
+     2.0000    2.0000    1.0000     3173.2861
+     1.0000    2.0000    2.0000    -2097.1099
+     2.0000    2.0000    2.0000     3148.7254
+     1.0000    3.0000    1.0000    -6862.3965
+     2.0000    3.0000    1.0000     3200.9872
+     1.0000    3.0000    2.0000    -5014.1231
+     2.0000    3.0000    2.0000     -793.6580
+
+******************** ANALYSIS NOTES AND ERRORS ************************ 
+
+Level of confidence for all confidence intervals in output: 95

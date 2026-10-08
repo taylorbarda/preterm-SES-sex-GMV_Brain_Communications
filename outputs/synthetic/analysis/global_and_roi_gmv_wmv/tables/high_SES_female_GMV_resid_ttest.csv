@@ -1,0 +1,2 @@
+Comparison,Variable,Test,Group_1,Group_1_n,Group_1_mean,Group_1_SD,Group_2,Group_2_n,Group_2_mean,Group_2_SD,t,df,p,t_welch,df_welch,p_welch
+High-SES VP/VLBW females vs high-SES FT females,GMV_resid_har,Student t-test (Welch alongside),VP/VLBW,10,-1412.0234689293895,21417.545691203795,FT,9,2089.489710533875,14189.572789355363,-0.41476373065150124,17.0,0.6835018884733085,-0.4238651698072233,15.714401996146421,0.6774091875322833

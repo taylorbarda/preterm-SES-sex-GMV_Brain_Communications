@@ -1,0 +1,73 @@
+
+********************* PROCESS for R Version 4.3.1 ********************* 
+ 
+           Written by Andrew F. Hayes, Ph.D.  www.afhayes.com              
+   Documentation available in Hayes (2022). www.guilford.com/p/hayes3   
+ 
+*********************************************************************** 
+                      
+Model : 3             
+    Y : TIV_harmonized
+    X : blsgroup      
+    W : ses0y2        
+    Z : sex           
+
+Covariates: 
+       Age_at_scan2_z
+
+Sample size: 208
+
+Custom seed: 1234
+
+
+*********************************************************************** 
+Outcome Variable: TIV_harmonized
+
+Model Summary: 
+          R      R-sq              MSE         F       df1       df2         p
+     0.6546    0.4285 10530060657.2877   18.6545    8.0000  199.0000    0.0000
+
+Model: 
+                      coeff          se         t         p         LLCI         ULCI
+constant       1585103.4652 188558.3856    8.4064    0.0000 1213274.3409 1956932.5895
+blsgroup         95940.9741 121195.3812    0.7916    0.4295 -143051.1679  334933.1161
+ses0y2           -7826.0055  87067.2609   -0.0899    0.9285 -179518.9444  163866.9334
+Int_1            -5657.6985  56647.6383   -0.0999    0.9205 -117364.4341  106049.0372
+sex             -34921.5489 132299.9536   -0.2640    0.7921 -295811.4358  225968.3379
+Int_2           -82884.6836  86058.5893   -0.9631    0.3367 -252588.5649   86819.1978
+Int_3           -50259.5726  60712.4270   -0.8278    0.4088 -169981.8988   69462.7536
+Int_4            40032.5944  40290.0493    0.9936    0.3216  -39417.6710  119482.8597
+Age_at_scan2_z    5586.8468   7346.4753    0.7605    0.4479   -8900.0902   20073.7839
+
+Product terms key:
+Int_1  :  blsgroup  x  ses0y2      
+Int_2  :  blsgroup  x  sex      
+Int_3  :  ses0y2  x  sex      
+Int_4  :  blsgroup  x  ses0y2  x  sex
+
+Test(s) of highest order unconditional interaction(s):
+        R2-chng         F       df1       df2         p
+X*W*Z    0.0028    0.9873    1.0000  199.0000    0.3216
+----------
+Focal predictor: blsgroup (X)
+      Moderator: ses0y2 (W)
+      Moderator: sex (Z)
+
+Data for visualizing the conditional effect of the focal predictor:
+   blsgroup    ses0y2       sex TIV_harmonized
+     1.0000    1.0000    1.0000   1539527.5246
+     2.0000    1.0000    1.0000   1586958.7111
+     1.0000    1.0000    2.0000   1411494.3139
+     2.0000    1.0000    2.0000   1416073.4112
+     1.0000    2.0000    1.0000   1515816.8424
+     2.0000    2.0000    1.0000   1597622.9247
+     1.0000    2.0000    2.0000   1377556.6535
+     2.0000    2.0000    2.0000   1456543.2410
+     1.0000    3.0000    1.0000   1492106.1602
+     2.0000    3.0000    1.0000   1608287.1384
+     1.0000    3.0000    2.0000   1343618.9930
+     2.0000    3.0000    2.0000   1497013.0707
+
+******************** ANALYSIS NOTES AND ERRORS ************************ 
+
+Level of confidence for all confidence intervals in output: 95

@@ -1,0 +1,58 @@
+
+********************* PROCESS for R Version 4.3.1 ********************* 
+ 
+           Written by Andrew F. Hayes, Ph.D.  www.afhayes.com              
+   Documentation available in Hayes (2022). www.guilford.com/p/hayes3   
+ 
+*********************************************************************** 
+                     
+Model : 1            
+    Y : WMV_resid_har
+    X : blsgroup     
+    W : ses0y2       
+
+Covariates: 
+       Age_at_scan2_z
+
+Sample size: 129
+
+Custom seed: 1234
+
+
+*********************************************************************** 
+Outcome Variable: WMV_resid_har
+
+Model Summary: 
+          R      R-sq            MSE         F       df1       df2         p
+     0.4237    0.1795 308658810.0975    6.7830    4.0000  124.0000    0.0001
+
+Model: 
+                     coeff         se         t         p        LLCI       ULCI
+constant       -34630.0094 13334.2495   -2.5971    0.0105 -61022.2577 -8237.7610
+blsgroup        21174.6869  8446.5149    2.5069    0.0135   4456.6466 37892.7271
+ses0y2           4943.7276  6181.1346    0.7998    0.4254  -7290.4846 17177.9398
+Int_1           -2514.0333  3937.1120   -0.6385    0.5243 -10306.6907  5278.6241
+Age_at_scan2_z  -1297.1647  1522.4905   -0.8520    0.3959  -4310.6036  1716.2743
+
+Product terms key:
+Int_1  :  blsgroup  x  ses0y2      
+
+Test(s) of highest order unconditional interaction(s):
+      R2-chng         F       df1       df2         p
+X*W    0.0027    0.4077    1.0000  124.0000    0.5243
+----------
+Focal predictor: blsgroup (X)
+      Moderator: ses0y2 (W)
+
+Data for visualizing the conditional effect of the focal predictor:
+   blsgroup    ses0y2 WMV_resid_har
+     1.0000    1.0000   -11096.2697
+     2.0000    1.0000     7564.3839
+     1.0000    2.0000    -8666.5754
+     2.0000    2.0000     7480.0449
+     1.0000    3.0000    -6236.8811
+     2.0000    3.0000     7395.7058
+
+******************** ANALYSIS NOTES AND ERRORS ************************ 
+
+Level of confidence for all confidence intervals in output: 95

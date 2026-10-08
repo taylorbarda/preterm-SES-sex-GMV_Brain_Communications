@@ -1,0 +1,64 @@
+VP/VLBW: FSIQ ~ GMV + age + sex (manuscript)
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:              wie_gesiq   R-squared:                       0.042
+Model:                            OLS   Adj. R-squared:                  0.011
+Method:                 Least Squares   F-statistic:                     1.372
+Date:                Thu, 08 Oct 2026   Prob (F-statistic):              0.256
+Time:                        17:20:18   Log-Likelihood:                -382.84
+No. Observations:                  99   AIC:                             773.7
+Df Residuals:                      95   BIC:                             784.1
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+=================================================================================
+                    coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------
+Intercept         8.8275     57.391      0.154      0.878    -105.108     122.763
+GMV_resid_har -8.768e-05   6.57e-05     -1.335      0.185      -0.000    4.27e-05
+Age_at_scan2      3.0487      2.139      1.425      0.157      -1.197       7.295
+sex               2.1627      2.398      0.902      0.369      -2.599       6.924
+==============================================================================
+Omnibus:                        1.281   Durbin-Watson:                   2.025
+Prob(Omnibus):                  0.527   Jarque-Bera (JB):                0.799
+Skew:                          -0.180   Prob(JB):                        0.671
+Kurtosis:                       3.252   Cond. No.                     9.02e+05
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 9.02e+05. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+One-tailed p for GMV_resid_har (b > 0): 0.9075
+
+VP/VLBW: FSIQ ~ GMV + age (as in fsiq_gmv_ols_preterms.txt)
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:              wie_gesiq   R-squared:                       0.033
+Model:                            OLS   Adj. R-squared:                  0.013
+Method:                 Least Squares   F-statistic:                     1.654
+Date:                Thu, 08 Oct 2026   Prob (F-statistic):              0.197
+Time:                        17:20:18   Log-Likelihood:                -383.26
+No. Observations:                  99   AIC:                             772.5
+Df Residuals:                      96   BIC:                             780.3
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+=================================================================================
+                    coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------
+Intercept        11.1375     57.278      0.194      0.846    -102.558     124.833
+GMV_resid_har -8.445e-05   6.55e-05     -1.289      0.200      -0.000    4.56e-05
+Age_at_scan2      3.0787      2.137      1.441      0.153      -1.162       7.320
+==============================================================================
+Omnibus:                        0.915   Durbin-Watson:                   2.019
+Prob(Omnibus):                  0.633   Jarque-Bera (JB):                0.638
+Skew:                          -0.193   Prob(JB):                        0.727
+Kurtosis:                       3.071   Cond. No.                     9.01e+05
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 9.01e+05. This might indicate that there are
+strong multicollinearity or other numerical problems.
+
+One-tailed p for GMV_resid_har (b > 0): 0.8998

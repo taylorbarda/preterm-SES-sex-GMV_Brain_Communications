@@ -1,0 +1,62 @@
+
+********************* PROCESS for R Version 4.3.1 ********************* 
+ 
+           Written by Andrew F. Hayes, Ph.D.  www.afhayes.com              
+   Documentation available in Hayes (2022). www.guilford.com/p/hayes3   
+ 
+*********************************************************************** 
+                      
+Model : 1             
+    Y : frontal_DK_GMV
+    X : tz            
+    W : ses0y2        
+
+Covariates: 
+       Age_at_scan2_z TIV_ml_z
+
+Sample size: 79
+
+Custom seed: 1234
+
+
+*********************************************************************** 
+Outcome Variable: frontal_DK_GMV
+
+Model Summary: 
+          R      R-sq           MSE         F       df1       df2         p
+     0.9380    0.8799 29696893.1071  106.9776    5.0000   73.0000    0.0000
+
+Model: 
+                     coeff         se         t         p        LLCI        ULCI
+constant       177707.1202 10322.4845   17.2155    0.0000 157134.3615 198279.8789
+tz                179.2247   310.4042    0.5774    0.5655   -439.4122    797.8615
+ses0y2           -224.8662  4801.2687   -0.0468    0.9628  -9793.8167   9344.0843
+Int_1             -28.9911   146.3539   -0.1981    0.8435   -320.6750    262.6929
+Age_at_scan2_z    634.2969   697.0311    0.9100    0.3658   -754.8893   2023.4831
+TIV_ml_z        16238.6906   773.9825   20.9807    0.0000  14696.1401  17781.2412
+
+Product terms key:
+Int_1  :  tz  x  ses0y2      
+
+Test(s) of highest order unconditional interaction(s):
+      R2-chng         F       df1       df2         p
+X*W    0.0001    0.0392    1.0000   73.0000    0.8435
+----------
+Focal predictor: tz (X)
+      Moderator: ses0y2 (W)
+
+Data for visualizing the conditional effect of the focal predictor:
+         tz    ses0y2 frontal_DK_GMV
+    26.0000    1.0000    169782.4344
+    31.0000    1.0000    170533.6022
+    41.0000    1.0000    172035.9379
+    26.0000    2.0000    168803.8000
+    31.0000    2.0000    169410.0124
+    41.0000    2.0000    170622.4373
+    26.0000    3.0000    167825.1656
+    31.0000    3.0000    168286.4226
+    41.0000    3.0000    169208.9367
+
+******************** ANALYSIS NOTES AND ERRORS ************************ 
+
+Level of confidence for all confidence intervals in output: 95

@@ -1,0 +1,66 @@
+
+********************* PROCESS for R Version 4.3.1 ********************* 
+ 
+           Written by Andrew F. Hayes, Ph.D.  www.afhayes.com              
+   Documentation available in Hayes (2022). www.guilford.com/p/hayes3   
+ 
+*********************************************************************** 
+                      
+Model : 1             
+    Y : TIV_harmonized
+    X : blsgroup      
+    W : ses0y2        
+
+Covariates: 
+       Age_at_scan2_z
+
+Sample size: 79
+
+Custom seed: 1234
+
+
+*********************************************************************** 
+Outcome Variable: TIV_harmonized
+
+Model Summary: 
+          R      R-sq              MSE         F       df1       df2         p
+     0.4337    0.1881 11126455881.9081    4.2867    4.0000   74.0000    0.0036
+
+Model: 
+                      coeff          se         t         p         LLCI         ULCI
+constant       1521453.6120 110836.2514   13.7270    0.0000 1300606.7594 1742300.4646
+blsgroup        -69163.5758  72509.6377   -0.9539    0.3433 -213642.7066   75315.5550
+ses0y2         -110959.0942  50458.5559   -2.1990    0.0310 -211500.3261  -10417.8623
+Int_1            74001.6060  34007.0611    2.1761    0.0327    6240.8119  141762.4000
+Age_at_scan2_z   12863.0278  13401.8176    0.9598    0.3403  -13840.7735   39566.8292
+
+Product terms key:
+Int_1  :  blsgroup  x  ses0y2      
+
+Test(s) of highest order unconditional interaction(s):
+      R2-chng         F       df1       df2         p
+X*W    0.0520    4.7353    1.0000   74.0000    0.0327
+----------
+Focal predictor: blsgroup (X)
+      Moderator: ses0y2 (W)
+
+Conditional effects of the focal predictor at values of the moderator(s):
+     ses0y2      effect         se         t         p        LLCI        ULCI
+     1.0000   4838.0302 41957.7500    0.1153    0.9085 -78764.9148  88440.9751
+     2.0000  78839.6361 24004.5498    3.2844    0.0016  31009.3531 126669.9191
+     3.0000 152841.2421 41290.9729    3.7016    0.0004  70566.8842 235115.5999
+
+Data for visualizing the conditional effect of the focal predictor:
+   blsgroup    ses0y2 TIV_harmonized
+     1.0000    1.0000   1414188.6941
+     2.0000    1.0000   1419026.7242
+     1.0000    2.0000   1377231.2058
+     2.0000    2.0000   1456070.8419
+     1.0000    3.0000   1340273.7175
+     2.0000    3.0000   1493114.9596
+
+******************** ANALYSIS NOTES AND ERRORS ************************ 
+
+Level of confidence for all confidence intervals in output: 95
+
+W values in conditional tables are the 16th, 50th, and 84th percentiles.

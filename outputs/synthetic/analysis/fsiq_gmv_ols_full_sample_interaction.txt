@@ -4,7 +4,7 @@ Dep. Variable:              wie_gesiq   R-squared:                       0.149
 Model:                            OLS   Adj. R-squared:                  0.128
 Method:                 Least Squares   F-statistic:                     6.970
 Date:                Thu, 08 Oct 2026   Prob (F-statistic):           5.06e-06
-Time:                        17:20:18   Log-Likelihood:                -810.21
+Time:                        18:10:13   Log-Likelihood:                -810.21
 No. Observations:                 205   AIC:                             1632.
 Df Residuals:                     199   BIC:                             1652.
 Df Model:                           5                                         

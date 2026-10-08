@@ -85,7 +85,7 @@ def _(MM, bu, data, plt, pub_dir):
     _panels = [
         ("GMV_resid_har", "GMV_resid_har_ml", "TIV-normalized GMV (mL)", "A", None),
         ("WMV_resid_har", "WMV_resid_har_ml", "TIV-normalized WMV (mL)", "B", None),
-        ("TIV_harmonized", "TIV_100ml", "TIV (×100 mL)", "C", (10, 22)),
+        ("TIV_harmonized", "TIV_100ml", "TIV (×100 mL)", "C", (10, 23)),
     ]
 
     fig1, _axes = plt.subplots(1, 3, figsize=(bu.JOURNAL_WIDTH * 1.5, 85 * MM))

@@ -1,4 +1,4 @@
-# Brain_Communications_code
+# preterm-SES-sex-GMV_Brain_Communications
 
 Analysis code for:
 
@@ -16,8 +16,8 @@ the code works.
 ## Quick start
 
 ```bash
-git clone https://github.com/taylorbarda/Brain_Communications_code.git
-cd Brain_Communications_code
+git clone https://github.com/taylorbarda/preterm-SES-sex-GMV_Brain_Communications.git
+cd preterm-SES-sex-GMV_Brain_Communications
 
 # one-time setup
 python3 -m venv .venv
@@ -82,7 +82,7 @@ Run the notebooks in order (`run_all.sh` does this). Each one saves the file the
 ### Folder layout
 
 ```
-Brain_Communications_code/
+preterm-SES-sex-GMV_Brain_Communications/
 ├── 01_ … 06_*.py            marimo notebooks
 ├── bc_utils.py              shared constants, statistics, PROCESS and plotting helpers
 ├── config.py                paths + data mode switch

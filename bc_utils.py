@@ -1,12 +1,13 @@
 """
 Shared constants, statistics, PROCESS and plotting helpers.
 
-Everything that was copy-pasted between the original notebooks lives here once.
+Used by all notebooks, so each helper is defined in one place.
 """
 
 import os
 import re
 import subprocess
+import warnings
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -196,8 +197,12 @@ def two_sample_ttest(x, y, comparison, variable, group_1, group_2):
     x = pd.to_numeric(x, errors="coerce").dropna()
     y = pd.to_numeric(y, errors="coerce").dropna()
 
-    student = stats.ttest_ind(x, y, equal_var=True)
-    welch = stats.ttest_ind(x, y, equal_var=False)
+    # groups that are too small (possible in synthetic data) give NaN without a warning
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", category=RuntimeWarning)
+        warnings.simplefilter("ignore", category=getattr(stats, "SmallSampleWarning", RuntimeWarning))
+        student = stats.ttest_ind(x, y, equal_var=True)
+        welch = stats.ttest_ind(x, y, equal_var=False)
 
     return {
         "Comparison": comparison,
@@ -611,7 +616,7 @@ def mode_banner(mo):
         return mo.callout(
             mo.md(
                 "**Data mode: `synthetic`** (fake data, results are meaningless).  \n"
-                f"Outputs → `outputs/synthetic/`. Run with `BC_DATA_MODE=real` to use the original data."
+                f"Outputs → `outputs/synthetic/`. Run with `BC_DATA_MODE=real` (authorized users only) to use the real data."
             ),
             kind="warn",
         )

@@ -4,33 +4,35 @@ Paths and switches shared by every notebook.
 Choose the data with the BC_DATA_MODE environment variable:
 
     synthetic  (default)  fake data in ./synthetic_data, made by make_synthetic_data.py
-    real                  the real data (read only): ../mod_analysis_final_bc/data, or the folder
-                          set in BC_REAL_DATA_DIR. Not public; available only to authorized users.
+    real                  the real data (read only) in the folder set by BC_REAL_DATA_DIR.
+                          Not public; available only to authorized users.
 
-All outputs go to ./outputs/<mode>/. Nothing is ever written to the original folder.
+All outputs go to ./outputs/<mode>/. The input folder is only ever read.
 """
 
 import os
 from pathlib import Path
 
 PROJECT_DIR = Path(__file__).resolve().parent
-ORIGINAL_DIR = PROJECT_DIR.parent / "mod_analysis_final_bc"
-# Real input data: the original analysis folder, or any folder given by BC_REAL_DATA_DIR
-ORIGINAL_DATA_DIR = Path(os.environ.get("BC_REAL_DATA_DIR", ORIGINAL_DIR / "data"))
 
 DATA_MODE = os.environ.get("BC_DATA_MODE", "synthetic").strip().lower()
 
 if DATA_MODE not in {"synthetic", "real"}:
     raise ValueError(f"BC_DATA_MODE must be 'synthetic' or 'real', got {DATA_MODE!r}")
 
-RAW_DIR = PROJECT_DIR / "synthetic_data" if DATA_MODE == "synthetic" else ORIGINAL_DATA_DIR
+if DATA_MODE == "real":
+    if "BC_REAL_DATA_DIR" not in os.environ:
+        raise RuntimeError("BC_DATA_MODE=real needs BC_REAL_DATA_DIR=/path/to/the/real/input/files")
+    RAW_DIR = Path(os.environ["BC_REAL_DATA_DIR"])
+else:
+    RAW_DIR = PROJECT_DIR / "synthetic_data"
 OUT_DIR = PROJECT_DIR / "outputs" / DATA_MODE
 
-if ORIGINAL_DIR.resolve() in OUT_DIR.resolve().parents:
-    raise RuntimeError("Refusing to write outputs inside the original analysis folder.")
+if RAW_DIR.resolve() in OUT_DIR.resolve().parents:
+    raise RuntimeError("Refusing to write outputs inside the input data folder.")
 
 # ------------------------------------------------------------------
-# Raw inputs (same file names as the original data folder)
+# Raw inputs
 # ------------------------------------------------------------------
 META_FILE = RAW_DIR / "BEST_Taylor_n212_descriptive_stats.xlsx"
 ASEG_FILE = RAW_DIR / "aseg_volume.csv"
@@ -39,14 +41,13 @@ RH_APARC_FILE = RAW_DIR / "aparc_stats_rh_volume_DK.csv"
 
 # ------------------------------------------------------------------
 # Intermediate datasets passed between notebooks
-# (same names as in the original data folder, so they can be compared)
 # ------------------------------------------------------------------
 EXCLUDED_FILE = OUT_DIR / "meta_aseg_aparc_subjects_excluded_correct.csv"
 COMBAT_FILE = OUT_DIR / "NCH_cortical_subcortical_GMV_ROIs_correct.csv"
 RESID_FILE = OUT_DIR / "NeuroCombat_resid_global_and_lobes_correct.csv"
 
 # ------------------------------------------------------------------
-# Output folders (mirror data/analysis/... in the original folder)
+# Output folders
 # ------------------------------------------------------------------
 ANALYSIS_DIR = OUT_DIR / "analysis"
 DESC_DIR = ANALYSIS_DIR / "descriptive_stats"
@@ -58,11 +59,9 @@ SUPP_DIR = PUB_DIR / "supplementary_lobes"
 # ------------------------------------------------------------------
 # PROCESS v4.3 for R (Hayes)
 # ------------------------------------------------------------------
-PROCESS_R_FILE = Path(os.environ.get(
-    "BC_PROCESS_R",
-    Path.home() / "Documents" / "Documents - Taylor’s Laptop" / "Documents_Taylor_Laptop"
-    / "sw" / "processv43" / "PROCESS v4.3 for R" / "process.R",
-))
+# Download process.R from https://www.processmacro.org and set BC_PROCESS_R,
+# or place it next to this file.
+PROCESS_R_FILE = Path(os.environ.get("BC_PROCESS_R", PROJECT_DIR / "process.R"))
 PROCESS_BOOT = int(os.environ.get("BC_PROCESS_BOOT", 5000))
 PROCESS_SEED = 1234
 

@@ -1,4 +1,4 @@
-# Same package versions as the original notebooks' .venv, plus marimo
+# Package versions used for the published results
 marimo==0.25.1
 pandas==3.0.3
 numpy==2.4.6

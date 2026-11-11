@@ -4,8 +4,8 @@ VP/VLBW: FSIQ ~ GMV + age + sex (manuscript)
 Dep. Variable:              wie_gesiq   R-squared:                       0.042
 Model:                            OLS   Adj. R-squared:                  0.011
 Method:                 Least Squares   F-statistic:                     1.372
-Date:                Thu, 08 Oct 2026   Prob (F-statistic):              0.256
-Time:                        18:10:13   Log-Likelihood:                -382.84
+Date:                Wed, 11 Nov 2026   Prob (F-statistic):              0.256
+Time:                        17:40:58   Log-Likelihood:                -382.84
 No. Observations:                  99   AIC:                             773.7
 Df Residuals:                      95   BIC:                             784.1
 Df Model:                           3                                         
@@ -37,8 +37,8 @@ VP/VLBW: FSIQ ~ GMV + age (as in fsiq_gmv_ols_preterms.txt)
 Dep. Variable:              wie_gesiq   R-squared:                       0.033
 Model:                            OLS   Adj. R-squared:                  0.013
 Method:                 Least Squares   F-statistic:                     1.654
-Date:                Thu, 08 Oct 2026   Prob (F-statistic):              0.197
-Time:                        18:10:13   Log-Likelihood:                -383.26
+Date:                Wed, 11 Nov 2026   Prob (F-statistic):              0.197
+Time:                        17:40:58   Log-Likelihood:                -383.26
 No. Observations:                  99   AIC:                             772.5
 Df Residuals:                      96   BIC:                             780.3
 Df Model:                           2                                         

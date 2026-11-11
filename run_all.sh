@@ -4,7 +4,7 @@
 #   ./run_all.sh          fake data  -> outputs/synthetic/ (+ outputs/synthetic/site/index.html)
 #   ./run_all.sh real     real data  -> outputs/real/      (+ outputs/real/site/index.html)
 #
-# The original folder ../mod_analysis_final_bc is only ever read, never written.
+# Input data are only ever read, never written.
 set -euo pipefail
 cd "$(dirname "$0")"
 
@@ -20,9 +20,6 @@ if [[ "$BC_DATA_MODE" == "synthetic" && ! -f synthetic_data/aseg_volume.csv ]]; 
 fi
 
 NOTEBOOKS=(0[1-6]_*.py)
-if [[ "$BC_DATA_MODE" == "real" ]]; then
-    NOTEBOOKS+=(07_compare_with_original.py)
-fi
 
 mkdir -p "$SITE"
 

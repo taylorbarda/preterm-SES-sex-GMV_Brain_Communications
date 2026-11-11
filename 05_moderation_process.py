@@ -121,7 +121,7 @@ def _(bu):
 def _(config, mo, process_jobs):
     mo.md(
         f"**{len(process_jobs)} PROCESS models** · bootstrap samples: {config.PROCESS_BOOT} · seed: {config.PROCESS_SEED}  \n"
-        f"PROCESS file: `{config.PROCESS_R_FILE}`"
+        f"PROCESS file: `{config.PROCESS_R_FILE.name}`"
     )
     return
 

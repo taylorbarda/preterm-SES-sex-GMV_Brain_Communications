@@ -1,0 +1,14 @@
+{
+  "title": "Analysis code: Infant socioeconomic status moderates preterm birth effects on adult gray matter in females only",
+  "description": "Analysis code (Python marimo notebooks and R/PROCESS) for Barda et al., Brain Communications (2026). Participant data from the Bavarian Longitudinal Study are confidential and not included; the repository contains synthetic data with the same structure so the full pipeline can be run.",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "Barda, Taylor",
+      "affiliation": "Department of Diagnostic and Interventional Neuroradiology, School of Medicine and Health, Technical University of Munich"
+    }
+  ],
+  "license": "cc-by-nc-sa-4.0",
+  "keywords": ["premature birth", "socioeconomic status", "gray matter volume", "sex differences", "MRI", "Bavarian Longitudinal Study"],
+  "notes": "Supported by the Deutsche Forschungsgemeinschaft (DFG; HE 8967/3-1)."
+}

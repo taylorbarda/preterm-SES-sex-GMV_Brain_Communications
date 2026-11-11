@@ -1,5 +1,7 @@
 # preterm-SES-sex-GMV_Brain_Communications
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24142278.svg)](https://doi.org/10.5281/zenodo.24142278)
+
 Analysis code for:
 
 > **Infant socioeconomic status moderates preterm birth effects on adult gray matter in females only**
@@ -132,4 +134,4 @@ See the paper for the full funding statement.
 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 (CC BY-NC-SA 4.0); see `LICENSE`. You may reuse and adapt it for non-commercial purposes
 with attribution, and must share adaptations under the same license.
-Please cite the paper above if you use this code.
+Please cite the paper above if you use this code. To cite the code itself, use its DOI: [10.5281/zenodo.24142278](https://doi.org/10.5281/zenodo.24142278).

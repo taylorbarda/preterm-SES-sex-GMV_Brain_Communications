@@ -8,6 +8,7 @@ authors:
     affiliation: "Technical University of Munich"
 license: CC-BY-NC-SA-4.0
 repository-code: "https://github.com/taylorbarda/preterm-SES-sex-GMV_Brain_Communications"
+doi: "10.5281/zenodo.24142278"
 preferred-citation:
   type: article
   title: "Infant socioeconomic status moderates preterm birth effects on adult gray matter in females only"

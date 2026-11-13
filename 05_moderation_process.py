@@ -174,7 +174,7 @@ def _(mo):
 
 @app.cell
 def _(bu, config, df_process, plt, sns):
-    _ses_palette = {1: "#66CDAA", 2: "#B0B0B0", 3: "coral"}
+    _ses_palette = {1: "#66CDAA", 2: "#B0B0B0", 3: "#CC79A7"}
     _ses_labels = {1: "High SES", 2: "Medium SES", 3: "Low SES"}
 
     plot_df = df_process.copy()

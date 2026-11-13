@@ -40,12 +40,12 @@ JOURNAL_HEIGHT = 210 * MM_TO_INCH
 # ============================================================
 BIRTHGROUP_LABELS = {1: "VP/VLBW", 2: "FT"}
 BIRTHGROUP_ORDER = ["VP/VLBW", "FT"]
-BIRTHGROUP_PALETTE = {"VP/VLBW": "#66CDAA", "FT": "coral"}
+BIRTHGROUP_PALETTE = {"VP/VLBW": "#66CDAA", "FT": "#CC79A7"}
 
 # Publication figures (PROCESS line plots)
 SES_LABELS = {1: "High SES", 2: "Middle SES", 3: "Low SES"}
 SES_ORDER = ["High SES", "Middle SES", "Low SES"]
-SES_PALETTE = {"High SES": "blue", "Middle SES": "orange", "Low SES": "green"}
+SES_PALETTE = {"High SES": "#0072B2", "Middle SES": "#E69F00", "Low SES": "#CC79A7"}
 
 SCANNER_STAGE_PALETTE = {"Before": "#4C72B0", "After": "#DD8452"}
 
